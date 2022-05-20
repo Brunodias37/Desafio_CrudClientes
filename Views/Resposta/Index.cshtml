@@ -1,0 +1,17 @@
+﻿@model CrudClientes.ViewModels.RespostaViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Respostas</h1>
+    <p>1) QUANTAS NOTAS FISCAIS FORAM EMITIDAS: @Model.QuantidadeNfEmitidas</p>
+    <p>2) QUAL É A DATA E HORA DA PRIMEIRA NOTA FISCAL EMITIDA: @Model.DataHoraPrimeiraNf</p>
+
+    <p>3) QUANTAS UNIDADES DE PRODUTOS FORAM VENDIDAS NAS NOTAS COM TIPO DE FRETE CIF: @Model.QuantidadeUniVendidasCif</p>
+    <p>4)  QUAL O VALOR VENDIDO COM AS NOTAS COM TIPO DE FRETE FOB: @Model.ValorTotalTipoFob.ToString("f2")</p>
+    <p>4)  QUANTOS MOUSES FORAM VENDIDOS: @Model.QuantidadeVendidasMouse</p>
+    <p>4)  QUAL FOI O LUCRO TOTAL DE TECLADO e MOUSE: @Model.QuantidadeVendidasMouseTeclado.ToString("F2")</p>
+
+</div>

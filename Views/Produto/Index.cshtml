@@ -1,0 +1,34 @@
+﻿@model List<CrudClientes.Models.Produto>
+
+
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<div class="text-center">
+    <a asp-controller="Produto" asp-action="Create">Novo Produto</a>
+    <h1 class="display-4">Lista de Produtos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome Produto</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in Model)
+            {
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@produto.NomeProduto</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@produto.Id">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@produto.Id">Deletar</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

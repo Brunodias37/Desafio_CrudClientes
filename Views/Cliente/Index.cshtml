@@ -1,0 +1,35 @@
+﻿@model List<CrudClientes.ViewModels.ClienteViewModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <a asp-controller="Cliente" asp-action="Create" >Novo cliente</a>
+    
+    <h1 class="display-4">Lista de clientes</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.Id</td>
+                    <td>@cliente.Nome</td>
+                    
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@cliente.Id">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@cliente.Id">Deletar</a>
+                    
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

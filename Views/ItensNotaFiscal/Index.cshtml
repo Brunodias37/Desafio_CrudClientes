@@ -1,0 +1,40 @@
+﻿@model List<CrudClientes.Models.ItensNotaFiscal>
+
+
+@{
+    ViewData["Title"] = "Nota Fiscal";
+}
+
+<div class="text-center">
+    <a asp-controller="ItensNotaFiscal" asp-action="Create">Registra Nova Nota Fiscal</a>
+    <h1 class="display-4">Lista de Itens das Notas Fiscais</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id Itens Nota Fiscal</th>
+                <th>Id Nota Fiscal</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço Unitario</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var itensNotaFiscal in Model)
+            {
+                <tr>
+                    <td>@itensNotaFiscal.Id</td>
+                    <td>@itensNotaFiscal.NotaFiscalId</td>
+                    <td>@itensNotaFiscal.Produto.NomeProduto</td>
+                    <td>@itensNotaFiscal.Quantidade</td>
+                    <td>@itensNotaFiscal.PrecoUnitario</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@itensNotaFiscal.Id">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@itensNotaFiscal.Id">Deletar</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
